@@ -14,7 +14,7 @@ async function main() {
   // await hre.run('compile');
 
   // We get the contract to deploy
-  const Greeter = await hre.ethers.getContractFactory("XpContract1");
+  const Greeter = await hre.ethers.getContractFactory("GooDeePayment");
   const greeter = await Greeter.deploy();
 
   await greeter.deployed();

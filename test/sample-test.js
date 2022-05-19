@@ -6,22 +6,14 @@ const ETHER = 10n ** 18n
 
 describe("Greeter", function () {
   it("Should return the new greeting once it's changed", async function () {
-    const Greeter = await ethers.getContractFactory("XpContract1");
+    const Greeter = await ethers.getContractFactory("GooDeePayment");
     const greeter = await Greeter.deploy();
     await greeter.deployed();
 
-    let tx = await greeter.mint({ value: ETHER * 1n});
+    let tx = await greeter.mint(123312, { value: ETHER * 1n});
     let receipt = await tx.wait();
 
-    console.log(receipt.events?.filter((x) => {return x.event == "buyXpEvent"}));
+    console.log(receipt.events?.filter((x) => {return x.event == "buyCoinsEvent"}));
 
-    //expect(await greeter.greet()).to.equal("Hello, world!");
-
-    //const setGreetingTx = await greeter.setGreeting("Hola, mundo!");
-
-    // wait until the transaction is mined
-    //await setGreetingTx.wait();
-
-    //expect(await greeter.greet()).to.equal("Hola, mundo!");
   });
 });
