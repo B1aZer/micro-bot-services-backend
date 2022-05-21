@@ -33,8 +33,8 @@ module.exports = {
     mainnet: {
       url: process.env.MAINNET_API_URL,
       accounts: [`0x${process.env.PRIVATE_KEY}`],
-      // 80 Gwei
-      gasPrice: 80000000000,
+      // 10 Gwei
+      gasPrice: 10000000000,
     },
     rinkeby: {
       url: process.env.RINKEBY_API_URL,
